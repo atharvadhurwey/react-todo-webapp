@@ -1,0 +1,69 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+  height: 100%;
+  user-select: none;
+}
+
+.title {
+  width: 17rem;
+  padding: 0 2rem;
+}
+
+.title h1 {
+  padding: 10px 20px;
+}
+
+.menu-list {
+  width: 17rem;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-list .tag {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-list .item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.menu-list .item:hover {
+  background: #f0f0f0;
+}
+
+.menu-list .item .text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+}
+
+.menu-list .other {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-list .hide-task {
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.other .hide-task:hover {
+  background: #f0f0f0;
+}
