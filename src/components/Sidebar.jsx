@@ -86,6 +86,7 @@ const Sidebar = () => {
               type="checkbox"
               style={{ zoom: "1.3" }}
               checked={hideCompleted}
+              readOnly
             />
             <span>Hide Completed Task</span>
           </div>

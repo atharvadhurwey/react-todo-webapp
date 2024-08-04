@@ -1,0 +1,70 @@
+.container {
+  padding: 10px;
+  columns: 3;
+  column-gap: 10px;
+}
+
+.task-box {
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #fff9de;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+.task-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.task-wrap {
+  cursor: pointer;
+}
+
+.task-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.task-drowdown {
+  transition: all 0.3s;
+}
+
+.task-drowdown.active {
+  transform: rotate(180deg);
+}
+
+.fa-sort-down > path,
+.fa-trash > path,
+.fa-circle-check > path,
+.fa-pen > path {
+  fill: #b2afa1;
+}
+
+.task-desc {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.task-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.task-tags {
+  user-select: none;
+  font-size: 25px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions > * {
+  cursor: pointer;
+}
