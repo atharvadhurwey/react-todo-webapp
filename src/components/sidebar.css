@@ -8,7 +8,7 @@
 
 .title {
   width: 17rem;
-  padding: 0 2rem;
+  padding: 0 1.3rem;
 }
 
 .title h1 {
@@ -17,7 +17,7 @@
 
 .menu-list {
   width: 17rem;
-  padding: 0 2rem;
+  padding: 0 1.3rem;
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -6,6 +6,7 @@ import {
   faSortDown,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import Modal from "./modal/Modal";
 import "./content.css";
 
 const Content = () => {
@@ -38,335 +39,343 @@ const Content = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">1 do something</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
+    <div className="wrapper">
+      <Modal />
+      <div className="container">
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">1 do something</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
             </div>
           </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
+            </div>
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
-            </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">2 do something else</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">2 do something else</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
             </div>
           </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
+            </div>
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
-            </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">3 do something different</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">3 do something different</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
             </div>
           </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
-          </div>
-        </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
             </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">4 do something new</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
-            </div>
-          </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
-          </div>
-        </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
-            </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">5 do something amazing</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
+
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">4 do something new</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
             </div>
           </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
-          </div>
-        </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
             </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">6 do something fun</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
-            </div>
-          </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
-          </div>
-        </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
-            </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">7 do something important</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
+
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">5 do something amazing</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
             </div>
           </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
-          </div>
-        </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
             </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">8 do something creative</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
-            </div>
-          </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
-          </div>
-        </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
-          </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
-            </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">9 do something challenging</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
+
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">6 do something fun</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
             </div>
           </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
+            </div>
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
+
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">7 do something important</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
+            </div>
           </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
             </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="task-box">
-        <div className="task-wrap">
-          <div className="task-head">
-            <div className="task-title">10 do something interesting</div>
-            <div className="task-drowdown">
-              <FontAwesomeIcon icon={faSortDown} size="lg" />
+
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">8 do something creative</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
             </div>
           </div>
-          <div className="task-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
-            eveniet aliquid error voluptatem est sequi excepturi quae nemo
-            asperiores, fugiat architecto repellat nihil, quod eaque.
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
+            </div>
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="task-foot">
-          <div className="task-tags">
-            <span>💻</span>
-            <span>👨‍💻</span>
-            <span>📝</span>
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">9 do something challenging</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
+            </div>
           </div>
-          <div className="task-actions">
-            <div className="btn task-complete">
-              <FontAwesomeIcon icon={faCircleCheck} />
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
             </div>
-            <div className="btn task-edit">
-              <FontAwesomeIcon icon={faPen} />
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
             </div>
-            <div className="btn task-delete">
-              <FontAwesomeIcon icon={faTrash} />
+          </div>
+        </div>
+        <div className="task-box">
+          <div className="task-wrap">
+            <div className="task-head">
+              <div className="task-title">10 do something interesting</div>
+              <div className="task-drowdown">
+                <FontAwesomeIcon icon={faSortDown} size="lg" />
+              </div>
+            </div>
+            <div className="task-desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor
+              eveniet aliquid error voluptatem est sequi excepturi quae nemo
+              asperiores, fugiat architecto repellat nihil, quod eaque.
+            </div>
+          </div>
+          <div className="task-foot">
+            <div className="task-tags">
+              <span>💻</span>
+              <span>👨‍💻</span>
+              <span>📝</span>
+            </div>
+            <div className="task-actions">
+              <div className="btn task-complete">
+                <FontAwesomeIcon icon={faCircleCheck} />
+              </div>
+              <div className="btn task-edit">
+                <FontAwesomeIcon icon={faPen} />
+              </div>
+              <div className="btn task-delete">
+                <FontAwesomeIcon icon={faTrash} />
+              </div>
             </div>
           </div>
         </div>
