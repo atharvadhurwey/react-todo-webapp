@@ -109,6 +109,10 @@ textarea {
   gap: 10px;
 }
 
+.error-container {
+  display: none;
+}
+
 .modal-tag {
   display: flex;
   justify-content: center;
@@ -121,9 +125,18 @@ textarea {
   cursor: pointer;
 }
 
+.modal-tag.selected {
+  color: white;
+}
+
 .modal-tag .icon {
   display: inline-block;
   min-width: 30px;
   min-height: 30px;
   border-radius: 50%;
+}
+
+.modal-tag .icon,
+.modal-tag .text {
+  user-select: none;
 }

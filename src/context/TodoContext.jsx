@@ -12,6 +12,21 @@ const TodoContextProvider = (props) => {
     setTodos([...todos, todo]);
   };
 
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  const updateTodo = (todo) => {
+    setTodos(
+      todos.map((t) => {
+        if (t.id === todo.id) {
+          return todo;
+        }
+        return t;
+      })
+    );
+  };
+
   const addTags = (tag) => {
     setTags([...tags, tag]);
   };
@@ -25,7 +40,14 @@ const TodoContextProvider = (props) => {
     }
   }, []);
 
-  const contextValue = { addTodo, addTags, todos, tags };
+  const contextValue = {
+    addTodo,
+    addTags,
+    removeTodo,
+    updateTodo,
+    todos,
+    tags,
+  };
 
   return (
     <TodoContext.Provider value={contextValue}>

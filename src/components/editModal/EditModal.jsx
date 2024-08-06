@@ -1,19 +1,15 @@
-import React, { useContext, useState } from "react";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import React, { useContext, useState } from "react";
 import { TodoContext } from "../../context/TodoContext";
-import "./modal.css";
 
-const Modal = () => {
-  const { todos, tags, addTodo } = useContext(TodoContext);
+const EditModal = (data) => {
+  const { tags, updateTodo } = useContext(TodoContext);
   const [modal, setModal] = useState(false);
+  const [task, setTask] = useState(data.todo);
 
-  var task = {
-    id: "",
-    title: "",
-    desc: "",
-    lastUpdated: "",
-    tags: [],
+  const handleChange = (e) => {
+    setTask({ ...task, [e.target.name]: e.target.value });
   };
 
   const toggleModal = () => {
@@ -35,6 +31,7 @@ const Modal = () => {
       error.style.display = "none";
     }
 
+    task.tags = [];
     var isEmpty = true;
     tags.forEach((tag) => {
       if (tag.classList.contains("selected")) {
@@ -57,7 +54,6 @@ const Modal = () => {
       error.style.display = "none";
     }
 
-    task.id = todos.length;
     task.title = title;
     task.desc = desc;
 
@@ -70,7 +66,7 @@ const Modal = () => {
       ", " +
       date.getFullYear();
 
-    addTodo(task);
+    updateTodo(task);
     toggleModal();
   };
 
@@ -95,13 +91,13 @@ const Modal = () => {
     document.body.style.overflowY = "auto";
   }
 
+  const toggleEditModal = () => {
+    return setModal(!modal);
+  };
+
   return (
     <div>
-      <div className="header">
-        <div className="add-task-button">
-          <FontAwesomeIcon icon={faPlus} onClick={toggleModal} size="2xl" />
-        </div>
-      </div>
+      <FontAwesomeIcon icon={faPen} onClick={toggleEditModal} />
       {modal && (
         <div className="modal">
           <div onClick={toggleModal} className="overlay"></div>
@@ -111,7 +107,7 @@ const Modal = () => {
                 Cancel
               </button>
               <button className="btn add-btn" onClick={handleSave}>
-                Add
+                Save
               </button>
             </div>
             <div className="modal-title-container">
@@ -120,6 +116,9 @@ const Modal = () => {
                 type="text"
                 placeholder="Enter your task title"
                 className="modal-title"
+                name="title"
+                value={task.title}
+                onChange={handleChange}
               ></input>
             </div>
             <div className="modal-desc-container">
@@ -128,6 +127,9 @@ const Modal = () => {
                 rows={4}
                 placeholder="Enter your task description"
                 className="modal-description"
+                name="desc"
+                value={task.desc}
+                onChange={handleChange}
               ></textarea>
             </div>
             <div className="error-container">
@@ -163,4 +165,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default EditModal;

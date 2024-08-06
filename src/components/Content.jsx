@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleCheck,
-  faPen,
   faSortDown,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./modal/Modal";
 import { TodoContext } from "../context/TodoContext";
 import "./content.css";
+import EditModal from "./editModal/EditModal";
 
 const Content = () => {
-  const { todos } = useContext(TodoContext);
+  const { todos, removeTodo, updateTodo } = useContext(TodoContext);
 
   const toggleActive = (i) => {
     const accord = document.querySelectorAll(".task-wrap");
@@ -29,6 +29,11 @@ const Content = () => {
     }
   };
 
+  const handleComplete = (todo) => {
+    todo.isCompleted = !todo.isCompleted;
+    updateTodo(todo);
+  };
+
   return (
     <div className="wrapper">
       <Modal />
@@ -38,12 +43,22 @@ const Content = () => {
             <div className="task-box" key={i}>
               <div className="task-wrap" onClick={() => toggleActive(i)}>
                 <div className="task-head">
-                  <div className="task-title">{todo.title}</div>
+                  <div
+                    className="task-title"
+                    style={
+                      todo.isCompleted ? { textDecoration: "line-through" } : {}
+                    }
+                  >
+                    {todo.title}
+                  </div>
                   <div className="task-drowdown">
                     <FontAwesomeIcon icon={faSortDown} size="lg" />
                   </div>
                 </div>
-                <div className="task-desc">{todo.desc}</div>
+                <div className="task-desc">
+                  <div className="task-desc-text">{todo.desc}</div>
+                  <div className="task-lastUpdated">{todo.lastUpdated}</div>
+                </div>
               </div>
               <div className="task-foot">
                 <div className="task-tags">
@@ -57,12 +72,18 @@ const Content = () => {
                 </div>
                 <div className="task-actions">
                   <div className="btn task-complete">
-                    <FontAwesomeIcon icon={faCircleCheck} />
+                    <FontAwesomeIcon
+                      icon={faCircleCheck}
+                      onClick={() => handleComplete(todo)}
+                    />
                   </div>
                   <div className="btn task-edit">
-                    <FontAwesomeIcon icon={faPen} />
+                    <EditModal todo={todo} />
                   </div>
-                  <div className="btn task-delete">
+                  <div
+                    className="btn task-delete"
+                    onClick={() => removeTodo(todo.id)}
+                  >
                     <FontAwesomeIcon icon={faTrash} />
                   </div>
                 </div>
