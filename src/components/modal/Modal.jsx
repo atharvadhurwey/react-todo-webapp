@@ -5,9 +5,13 @@ import { TodoContext } from "../../context/TodoContext";
 import "./modal.css";
 
 const Modal = () => {
+  // Get the todos, tags, and addTodo function from the TodoContext
   const { todos, tags, addTodo } = useContext(TodoContext);
+
+  // State to control the visibility of the modal
   const [modal, setModal] = useState(false);
 
+  // Object to store the task details
   var task = {
     id: "",
     title: "",
@@ -16,16 +20,20 @@ const Modal = () => {
     tags: [],
   };
 
+  // Function to toggle the modal visibility
   const toggleModal = () => {
     return setModal(!modal);
   };
 
+  // Function to handle the save button click
   const handleSave = () => {
+    // Get the values from the input fields
     const title = document.querySelector(".modal-title").value;
     const desc = document.querySelector(".modal-description").value;
     const tags = document.querySelectorAll(".modal-tag");
     const error = document.querySelector(".error-container");
 
+    // Validate the input fields
     if (title.trim() === "" || desc.trim() === "") {
       error.innerText = "Please fill all the fields";
       error.style.color = "red";
@@ -35,6 +43,7 @@ const Modal = () => {
       error.style.display = "none";
     }
 
+    // Check if at least one tag is selected
     var isEmpty = true;
     tags.forEach((tag) => {
       if (tag.classList.contains("selected")) {
@@ -49,7 +58,7 @@ const Modal = () => {
       }
     });
     if (isEmpty) {
-      error.innerHTML = "Please select atleast one tag";
+      error.innerHTML = "Please select at least one tag";
       error.style.color = "red";
       error.style.display = "block";
       return;
@@ -57,6 +66,7 @@ const Modal = () => {
       error.style.display = "none";
     }
 
+    // Set the task details
     task.id = todos.length;
     task.title = title;
     task.desc = desc;
@@ -70,10 +80,14 @@ const Modal = () => {
       ", " +
       date.getFullYear();
 
+    // Add the task to the todos list
     addTodo(task);
+
+    // Close the modal
     toggleModal();
   };
 
+  // Function to handle the tag selection
   const handleSelected = (i, color) => {
     const tags = document.querySelectorAll(".modal-tag");
     const tag = tags[i];
@@ -89,6 +103,7 @@ const Modal = () => {
     }
   };
 
+  // Disable scrolling when the modal is open
   if (modal) {
     document.body.style.overflowY = "hidden";
   } else {

@@ -10,6 +10,7 @@ const Sidebar = () => {
 
   let filters = tags;
 
+  // Function to handle filter selection
   const handleFilter = (filter) => {
     if (selectedFilters.includes(filter)) {
       setSelectedFilters(selectedFilters.filter((f) => f !== filter));
@@ -18,12 +19,14 @@ const Sidebar = () => {
     }
   };
 
+  // Function to handle hide completed toggle
   const handleHideCompletedToggle = () => {
     setHideCompleted(!hideCompleted);
     hideCompletedTodos();
   };
 
   useEffect(() => {
+    // Add event listeners to handle marquee effect on overflowing text
     const elements = document.getElementsByClassName("text");
 
     const textContents = Array.from(elements).map(
@@ -47,11 +50,13 @@ const Sidebar = () => {
   }, []);
 
   function isElementOverflowing(element) {
+    // Check if an element's content is overflowing horizontally
     var overflowX = element.offsetWidth < element.scrollWidth;
     return overflowX;
   }
 
   function wrapContentsInMarquee(element) {
+    // Wrap the element's contents in a marquee element for scrolling effect
     var marquee = document.createElement("marquee"),
       contents = element.innerText;
 
@@ -62,10 +67,12 @@ const Sidebar = () => {
   }
 
   function resetMarquee(element, contents) {
+    // Reset the marquee element and restore the original contents
     element.innerHTML = contents;
   }
 
   useEffect(() => {
+    // Call filteredTodos whenever selectedFilters change
     filteredTodos(selectedFilters);
   }, [filteredTodos, selectedFilters]);
 

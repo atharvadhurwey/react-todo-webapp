@@ -16,12 +16,14 @@ const Content = () => {
 
   var FilteredTodos = todos;
 
+  // Apply selected filters
   if (selectedFilters.length > 0) {
     FilteredTodos = todos.filter((todo) => {
       return todo.tags.some((tag) => selectedFilters.includes(tag.name));
     });
   }
 
+  // Hide completed todos if hideCompleted is true
   if (hideCompleted) {
     FilteredTodos = FilteredTodos.filter((todo) => !todo.isCompleted);
   }
@@ -31,6 +33,7 @@ const Content = () => {
     const taskDropdown = accord[i].querySelector(".task-drowdown");
     const taskDesc = accord[i].querySelector(".task-desc");
 
+    // Toggle active class and adjust height of task description
     if (taskDropdown.classList.contains("active")) {
       taskDropdown.classList.remove("active");
       taskDesc.classList.remove("active");
@@ -43,6 +46,7 @@ const Content = () => {
   };
 
   const handleComplete = (todo) => {
+    // Toggle the isCompleted property of the todo
     todo.isCompleted = !todo.isCompleted;
     updateTodo(todo);
   };

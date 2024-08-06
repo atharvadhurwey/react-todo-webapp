@@ -4,24 +4,29 @@ import React, { useContext, useState } from "react";
 import { TodoContext } from "../../context/TodoContext";
 
 const EditModal = (data) => {
+  // Import necessary dependencies and components
   const { tags, updateTodo } = useContext(TodoContext);
   const [modal, setModal] = useState(false);
   const [task, setTask] = useState(data.todo);
 
+  // Handle input change
   const handleChange = (e) => {
     setTask({ ...task, [e.target.name]: e.target.value });
   };
 
+  // Toggle modal visibility
   const toggleModal = () => {
     return setModal(!modal);
   };
 
+  // Handle save button click
   const handleSave = () => {
     const title = document.querySelector(".modal-title").value;
     const desc = document.querySelector(".modal-description").value;
     const tags = document.querySelectorAll(".modal-tag");
     const error = document.querySelector(".error-container");
 
+    // Validate input fields
     if (title.trim() === "" || desc.trim() === "") {
       error.innerText = "Please fill all the fields";
       error.style.color = "red";
@@ -31,6 +36,7 @@ const EditModal = (data) => {
       error.style.display = "none";
     }
 
+    // Update task tags
     task.tags = [];
     var isEmpty = true;
     tags.forEach((tag) => {
@@ -54,11 +60,12 @@ const EditModal = (data) => {
       error.style.display = "none";
     }
 
+    // Update task title and description
     task.title = title;
     task.desc = desc;
 
+    // Update last updated date
     const date = new Date();
-
     task.lastUpdated =
       date.toDateString().split(" ")[1] +
       " " +
@@ -66,10 +73,12 @@ const EditModal = (data) => {
       ", " +
       date.getFullYear();
 
+    // Update todo and close modal
     updateTodo(task);
     toggleModal();
   };
 
+  // Handle tag selection
   const handleSelected = (i, color) => {
     const tags = document.querySelectorAll(".modal-tag");
     const tag = tags[i];
@@ -85,12 +94,14 @@ const EditModal = (data) => {
     }
   };
 
+  // Disable body scrolling when modal is open
   if (modal) {
     document.body.style.overflowY = "hidden";
   } else {
     document.body.style.overflowY = "auto";
   }
 
+  // Toggle edit modal visibility
   const toggleEditModal = () => {
     return setModal(!modal);
   };
