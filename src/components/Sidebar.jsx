@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
+import userPhoto from "../assets/user.png";
 import "./sidebar.css";
 
 const Sidebar = () => {
@@ -121,6 +122,9 @@ const Sidebar = () => {
             <span>Hide Completed Task</span>
           </div>
         </div>
+      </div>
+      <div className="user">
+        <img src={userPhoto} className="userIMG" alt="user" />
       </div>
     </div>
   );

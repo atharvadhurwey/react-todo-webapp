@@ -74,3 +74,14 @@
 .other .hide-task:hover {
   background: #f0f0f0;
 }
+
+.user {
+  display: flex;
+  flex-direction: column;
+}
+
+.userIMG {
+  width: 200px;
+  height: 200px;
+  margin: auto auto;
+}
