@@ -11,7 +11,20 @@ import "./content.css";
 import EditModal from "./editModal/EditModal";
 
 const Content = () => {
-  const { todos, removeTodo, updateTodo } = useContext(TodoContext);
+  const { todos, removeTodo, updateTodo, selectedFilters, hideCompleted } =
+    useContext(TodoContext);
+
+  var FilteredTodos = todos;
+
+  if (selectedFilters.length > 0) {
+    FilteredTodos = todos.filter((todo) => {
+      return todo.tags.some((tag) => selectedFilters.includes(tag.name));
+    });
+  }
+
+  if (hideCompleted) {
+    FilteredTodos = FilteredTodos.filter((todo) => !todo.isCompleted);
+  }
 
   const toggleActive = (i) => {
     const accord = document.querySelectorAll(".task-wrap");
@@ -38,8 +51,8 @@ const Content = () => {
     <div className="wrapper">
       <Modal />
       <div className="container">
-        {todos.length > 0 ? (
-          todos.map((todo, i) => (
+        {FilteredTodos.length > 0 ? (
+          FilteredTodos.map((todo, i) => (
             <div className="task-box" key={i}>
               <div className="task-wrap" onClick={() => toggleActive(i)}>
                 <div className="task-head">

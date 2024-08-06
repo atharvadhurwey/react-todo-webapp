@@ -3,11 +3,24 @@ import { TodoContext } from "../context/TodoContext";
 import "./sidebar.css";
 
 const Sidebar = () => {
-  const { tags } = useContext(TodoContext);
+  const { tags, filteredTodos, hideCompletedTodos } = useContext(TodoContext);
   const [hideCompleted, setHideCompleted] = useState(false);
+
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  let filters = tags;
+
+  const handleFilter = (filter) => {
+    if (selectedFilters.includes(filter)) {
+      setSelectedFilters(selectedFilters.filter((f) => f !== filter));
+    } else {
+      setSelectedFilters([...selectedFilters, filter]);
+    }
+  };
 
   const handleHideCompletedToggle = () => {
     setHideCompleted(!hideCompleted);
+    hideCompletedTodos();
   };
 
   useEffect(() => {
@@ -52,6 +65,10 @@ const Sidebar = () => {
     element.innerHTML = contents;
   }
 
+  useEffect(() => {
+    filteredTodos(selectedFilters);
+  }, [filteredTodos, selectedFilters]);
+
   return (
     <div className="menu">
       <div className="title">
@@ -59,12 +76,25 @@ const Sidebar = () => {
       </div>
       <div className="menu-list">
         <div className="tag">
-          {tags.length > 0 ? (
-            tags.map((tag, i) => (
-              <div className="item" key={i}>
+          {filters.length > 0 ? (
+            filters.map((tag, i) => (
+              <div
+                className="item"
+                key={i}
+                onClick={() => handleFilter(tag.name)}
+                style={
+                  selectedFilters?.includes(tag.name)
+                    ? { background: tag.color }
+                    : {}
+                }
+              >
                 <span
                   className="color"
-                  style={{ background: tag.color }}
+                  style={
+                    selectedFilters?.includes(tag.name)
+                      ? { background: "whitesmoke" }
+                      : { background: tag.color }
+                  }
                 ></span>
                 <span className="text">{tag.name}</span>
               </div>

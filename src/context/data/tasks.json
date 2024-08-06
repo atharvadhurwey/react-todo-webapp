@@ -15,8 +15,8 @@
         "name": "work"
       },
       {
-        "color": "#ffcece",
-        "name": "home"
+        "color": "#f7d1e5",
+        "name": "personal"
       }
     ]
   },
@@ -28,12 +28,12 @@
     "lastUpdated": "Dec 4, 2023",
     "tags": [
       {
-        "color": "#d1e5f7",
+        "color": "#ffcece",
         "name": "home"
       },
       {
-        "color": "#d1e5f7",
-        "name": "chores"
+        "color": "#f7d1e5",
+        "name": "personal"
       }
     ]
   },
@@ -46,7 +46,7 @@
     "tags": [
       {
         "color": "#d1e5f7",
-        "name": "shopping"
+        "name": "important"
       },
       {
         "color": "#ffcece",
@@ -62,8 +62,8 @@
     "lastUpdated": "Mar 22, 2024",
     "tags": [
       {
-        "color": "#d1e5f7",
-        "name": "hobby"
+        "color": "#f7d1e5",
+        "name": "personal"
       }
     ]
   },
@@ -75,8 +75,8 @@
     "lastUpdated": "Jan 12, 2024",
     "tags": [
       {
-        "color": "#daf2d6",
-        "name": "exercise"
+        "color": "#f7d1e5",
+        "name": "personal"
       }
     ]
   },
@@ -89,6 +89,10 @@
     "tags": [
       {
         "color": "#d1e5f7",
+        "name": "important"
+      },
+      {
+        "color": "#daf2d6",
         "name": "work"
       }
     ]
@@ -108,14 +112,14 @@
   },
   {
     "id": 7,
-    "title": "find good laptop",
+    "title": "finish homework",
     "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor eveniet aliquid error voluptatem est sequi excepturi quae nemo asperiores, fugiat architecto repellat nihil, quod eaque.",
     "isCompleted": false,
     "lastUpdated": "Oct 8, 2023",
     "tags": [
       {
-        "color": "#d1e5f7",
-        "name": "personal"
+        "color": "#d6daf2",
+        "name": "school"
       }
     ]
   }
