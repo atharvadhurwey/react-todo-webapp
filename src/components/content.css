@@ -8,6 +8,10 @@
   padding: 0 10px;
   columns: 3;
   column-gap: 10px;
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: repeat(n, minmax(auto, 1fr)); */
+  gap: 10px;
 }
 
 .task-box {
@@ -34,7 +38,7 @@
 }
 
 .task-drowdown {
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 .task-drowdown.active {
@@ -51,7 +55,11 @@
 .task-desc {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s;
+  transition: all 0.5s;
+}
+
+.task-desc.active {
+  margin-bottom: 10px;
 }
 
 .task-foot {
@@ -63,7 +71,15 @@
 
 .task-tags {
   user-select: none;
-  font-size: 25px;
+  display: flex;
+  gap: 5px;
+}
+
+.task-tags .icon {
+  display: inline-block;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
 }
 
 .task-actions {

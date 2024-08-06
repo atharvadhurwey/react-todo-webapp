@@ -1,0 +1,22 @@
+[
+  {
+    "color": "#d1e5f7",
+    "name": "important"
+  },
+  {
+    "color": "#daf2d6",
+    "name": "work"
+  },
+  {
+    "color": "#ffcece",
+    "name": "home"
+  },
+  {
+    "color": "#f7d1e5",
+    "name": "personal"
+  },
+  {
+    "color": "#d6daf2",
+    "name": "school"
+  }
+]

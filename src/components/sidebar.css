@@ -44,6 +44,12 @@
   background: #f0f0f0;
 }
 
+.menu-list .item .color {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+}
+
 .menu-list .item .text {
   white-space: nowrap;
   overflow: hidden;

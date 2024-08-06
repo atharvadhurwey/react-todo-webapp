@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { TodoContext } from "../context/TodoContext";
 import "./sidebar.css";
 
 const Sidebar = () => {
+  const { tags } = useContext(TodoContext);
   const [hideCompleted, setHideCompleted] = useState(false);
 
   const handleHideCompletedToggle = () => {
@@ -57,28 +59,19 @@ const Sidebar = () => {
       </div>
       <div className="menu-list">
         <div className="tag">
-          <div className="item">
-            <span className="icon">📝</span>
-            <span className="text">All</span>
-          </div>
-          <div className="item">
-            <span className="icon">🌟</span>
-            <span className="text">Important</span>
-          </div>
-          <div className="item">
-            <span className="icon">📅</span>
-            <span className="text">Planned</span>
-          </div>
-          <div className="item">
-            <span className="icon">👀</span>
-            <span className="text">
-              Completed CompletedCompletedCompletedCompleted
-            </span>
-          </div>
-          <div className="item">
-            <span className="icon">🗑️</span>
-            <span className="text">Deleted</span>
-          </div>
+          {tags.length > 0 ? (
+            tags.map((tag, i) => (
+              <div className="item" key={i}>
+                <span
+                  className="color"
+                  style={{ background: tag.color }}
+                ></span>
+                <span className="text">{tag.name}</span>
+              </div>
+            ))
+          ) : (
+            <div className="no-tags">No Tags available</div>
+          )}
         </div>
         <div className="other">
           <div className="hide-task" onClick={handleHideCompletedToggle}>

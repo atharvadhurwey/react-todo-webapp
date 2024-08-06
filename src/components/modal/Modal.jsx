@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { TodoContext } from "../../context/TodoContext";
 import "./modal.css";
 
 const Modal = () => {
-  const [modal, setModal] = useState(false);
+  const { tags } = useContext(TodoContext);
+  const [modal, setModal] = useState(true);
 
   const task = {
     title: "",
@@ -85,28 +87,19 @@ const Modal = () => {
             <div className="modal-tags-container">
               <label className="modal-label">Tags</label>
               <div className="modal-tags-list">
-                <div className="modal-tag">
-                  <span className="icon">📅</span>
-                  <span className="text">Planned</span>
-                </div>
-                <div className="modal-tag">
-                  <span className="icon">👀</span>
-                  <span className="text">
-                    Completed CompletedCompletedCompletedCompleted
-                  </span>
-                </div>
-                <div className="modal-tag selected">
-                  <span className="icon">🗑️</span>
-                  <span className="text">Deleted</span>
-                </div>
-                <div className="modal-tag">
-                  <span className="icon">🌟</span>
-                  <span className="text">Important</span>
-                </div>
-                <div className="modal-tag">
-                  <span className="icon">📝</span>
-                  <span className="text">All</span>
-                </div>
+                {tags.length > 0 ? (
+                  tags.map((tag) => (
+                    <div className="modal-tag">
+                      <span
+                        className="icon"
+                        style={{ background: tag.color }}
+                      ></span>
+                      <span className="text">{tag.name}</span>
+                    </div>
+                  ))
+                ) : (
+                  <div className="no-tags">No Tags available</div>
+                )}
               </div>
             </div>
           </div>
